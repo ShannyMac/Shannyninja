@@ -5,7 +5,8 @@ var app = angular
     'ngAnimate',
     'ngResource',    
     'ngRoute',    
-    'firebase'
+    'firebase',
+    'toaster'
   ])
   .constant('FURL', 'https://shanny-ninja.firebaseio.com/')  
   .config(function ($routeProvider) {
@@ -14,10 +15,12 @@ var app = angular
         templateUrl: 'views/main.html'        
       })
       .when('/login', {
-        templateUrl: 'views/login.html'
+        templateUrl: 'views/login.html',
+        controller: 'AuthController'
       })
       .when('/register', {
-        templateUrl: 'views/register.html'
+        templateUrl: 'views/register.html',
+        controller: 'AuthController'
       })
       .when('/post', {
         templateUrl: 'views/post.html',
